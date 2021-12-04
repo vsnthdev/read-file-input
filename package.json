@@ -1,0 +1,23 @@
+{
+    "name": "read-file-input",
+    "description": "Opens a 📝 text editor, waits until closed & captures 🔬 file content.",
+    "version": "0.0.0",
+    "license": "MIT",
+    "main": "",
+    "type": "commonjs",
+    "homepage": "https://github.com/vsnthdev/read-file-input#readme",
+    "bugs": "https://github.com/vsnthdev/read-file-input/issues",
+    "author": {
+        "name": "Vasanth Developer",
+        "email": "vasanth@vasanthdeveloper.com",
+        "url": "https://vsnth.dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vsnthdev/read-file-input.git"
+    },
+    "scripts": {},
+    "keywords": [],
+    "dependencies": {},
+    "devDependencies": {}
+}
