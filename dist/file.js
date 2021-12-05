@@ -43,4 +43,9 @@ export const create = ({ name, content }) => __awaiter(void 0, void 0, void 0, f
 // reads the temp file text and returns back the utf-8 string
 export const read = (config) => __awaiter(void 0, void 0, void 0, function* () { return yield fs.readFile(getTempFilePath(config.name), 'utf-8'); });
 // deletes the created file from the temp directory, if enabled in the config
-export const cleanup = () => __awaiter(void 0, void 0, void 0, function* () { });
+export const cleanup = (config) => __awaiter(void 0, void 0, void 0, function* () {
+    // only do it if config.cleanup is set to true
+    if (!config.cleanup)
+        return;
+    yield fs.unlink(getTempFilePath(config.name));
+});
