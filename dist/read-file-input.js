@@ -13,7 +13,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import merge from 'deepmerge';
 import { nanoid } from 'nanoid';
-import { getEditor } from './editor.js';
+import { getEditor, openEditor } from './editor.js';
 import { create } from './file.js';
 const defaults = {
     cleanup: true,
@@ -27,6 +27,7 @@ export default (config = defaults) => __awaiter(void 0, void 0, void 0, function
     // figure out which editor to use
     config.editor = getEditor(config);
     // open the editor
+    yield openEditor(config);
     // capture input
     // delete the file
     return '';

@@ -14,7 +14,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import fs from 'fs/promises';
 import osPaths from 'os-paths';
 import path from 'path';
-const getTempFilePath = (name) => path.join(osPaths.temp(), name);
+export const getTempFilePath = (name) => path.join(osPaths.temp(), name);
 // creates a new file in the temp directory according
 // to the configuration specified
 export const create = ({ name, content }) => __awaiter(void 0, void 0, void 0, function* () {

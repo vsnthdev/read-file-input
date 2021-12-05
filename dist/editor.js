@@ -2,6 +2,17 @@
  *  Functions specific to the text editor for this project.
  *  Created On 05 December 2021
  */
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+import { execa } from 'execa';
+import { getTempFilePath } from './file.js';
 // getEditor() decides which editor to be launched on different operating systems.
 export const getEditor = ({ editor }) => {
     // throw error if not interactive
@@ -26,3 +37,8 @@ export const getEditor = ({ editor }) => {
         throw new Error(`Could not determine the editor. Please set $VISUAL or $EDITOR or specify a custom editor in config.`);
     return editor;
 };
+export const openEditor = (config) => __awaiter(void 0, void 0, void 0, function* () {
+    return yield execa(`${config.editor} "${getTempFilePath(config.name)}"`, {
+        shell: true,
+    });
+});

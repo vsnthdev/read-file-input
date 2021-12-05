@@ -7,7 +7,7 @@ import merge from 'deepmerge'
 import { nanoid } from 'nanoid'
 
 import { ConfigImpl } from './config.js'
-import { getEditor } from './editor.js'
+import { getEditor, openEditor } from './editor.js'
 import { create } from './file.js'
 
 const defaults: ConfigImpl = {
@@ -26,6 +26,7 @@ export default async (config: ConfigImpl = defaults): Promise<string> => {
     config.editor = getEditor(config)
 
     // open the editor
+    await openEditor(config)
 
     // capture input
     // delete the file

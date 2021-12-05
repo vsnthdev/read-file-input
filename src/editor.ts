@@ -3,7 +3,10 @@
  *  Created On 05 December 2021
  */
 
-import { ConfigImpl } from './config'
+import { execa } from 'execa'
+
+import { ConfigImpl } from './config.js'
+import { getTempFilePath } from './file.js'
 
 // getEditor() decides which editor to be launched on different operating systems.
 export const getEditor = ({ editor }: ConfigImpl): string => {
@@ -33,3 +36,8 @@ export const getEditor = ({ editor }: ConfigImpl): string => {
 
     return editor
 }
+
+export const openEditor = async (config: ConfigImpl) =>
+    await execa(`${config.editor} "${getTempFilePath(config.name)}"`, {
+        shell: true,
+    })

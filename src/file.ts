@@ -9,7 +9,7 @@ import path from 'path'
 
 import { ConfigImpl } from './config'
 
-const getTempFilePath = (name: string): string =>
+export const getTempFilePath = (name: string): string =>
     path.join(osPaths.temp(), name)
 
 // creates a new file in the temp directory according

@@ -23,6 +23,7 @@
     "keywords": [],
     "dependencies": {
         "deepmerge": "^4.2.2",
+        "execa": "^6.0.0",
         "nanoid": "^3.1.30",
         "os-paths": "^6.9.0"
     },
