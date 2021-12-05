@@ -1,2 +1,2 @@
-declare const _default: (custom: string) => string;
-export default _default;
+import { ConfigImpl } from './config';
+export declare const getEditor: ({ editor }: ConfigImpl) => string;

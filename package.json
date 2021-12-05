@@ -23,7 +23,8 @@
     "keywords": [],
     "dependencies": {
         "deepmerge": "^4.2.2",
-        "nanoid": "^3.1.30"
+        "nanoid": "^3.1.30",
+        "os-paths": "^6.9.0"
     },
     "devDependencies": {
         "@types/node": "^16.11.11",

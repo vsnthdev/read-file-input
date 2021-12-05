@@ -1,9 +1,9 @@
 /*
- *  Decides which editor to be launched on different operating systems.
+ *  Functions specific to the text editor for this project.
  *  Created On 05 December 2021
  */
-export default (custom) => {
-    let editor;
+// getEditor() decides which editor to be launched on different operating systems.
+export const getEditor = ({ editor }) => {
     // throw error if not interactive
     if (process.stdout.isTTY == false)
         throw new Error(`Non-interactive session, please implement a fallback.`);
@@ -12,14 +12,14 @@ export default (custom) => {
         // On Microsoft Windows we either use a custom provided
         // editor or fallback to the stock Notepad for compatibility
         // reasons
-        editor = custom || 'notepad.exe';
+        editor = editor || 'notepad.exe';
     }
     else {
         // On all other POSIX compliant operating systems
         // if the consumer specifies a custom editor, we use that
         // other else we first check for the $VISUAL environment variable
         // or else fallback to $EDITOR environment variable
-        editor = custom || process.env.VISUAL || process.env.EDITOR;
+        editor = editor || process.env.VISUAL || process.env.EDITOR;
     }
     // throw an error if there editor is empty
     if (!editor)

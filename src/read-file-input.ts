@@ -7,7 +7,8 @@ import merge from 'deepmerge'
 import { nanoid } from 'nanoid'
 
 import { ConfigImpl } from './config.js'
-import getEditor from './editor.js'
+import { getEditor } from './editor.js'
+import { create } from './file.js'
 
 const defaults: ConfigImpl = {
     cleanup: true,
@@ -19,8 +20,10 @@ export default async (config: ConfigImpl = defaults): Promise<string> => {
     config = merge(defaults, config)
 
     // generate the temporary file
+    await create(config)
+
     // figure out which editor to use
-    config.editor = await getEditor(config.editor)
+    config.editor = getEditor(config)
 
     // open the editor
 
