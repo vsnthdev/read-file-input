@@ -21,7 +21,20 @@
         "build": "rimraf ./dist && tsc --incremental false",
         "docs": "node scripts/docs/index.js"
     },
-    "keywords": [],
+    "keywords": [
+        "cli",
+        "input",
+        "stdin",
+        "editor",
+        "prompt",
+        "prompt",
+        "prompts",
+        "prompts",
+        "command",
+        "terminal",
+        "readline",
+        "command-line"
+    ],
     "dependencies": {
         "deepmerge": "^4.2.2",
         "execa": "^6.0.0",
