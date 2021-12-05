@@ -18,7 +18,7 @@
     },
     "scripts": {
         "dev": "tsc --watch",
-        "build": "rimraf ./dist && tsc"
+        "build": "rimraf ./dist && tsc --incremental false"
     },
     "keywords": [],
     "devDependencies": {
