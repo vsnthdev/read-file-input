@@ -1,5 +1,5 @@
 /*
- *  Entryfile for  read-file-input project.
+ *  Entryfile for read-file-input project.
  *  Created On 05 December 2021
  */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -12,18 +12,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import merge from 'deepmerge';
+import getEditor from './editor.js';
 const defaults = {
     cleanup: true,
 };
 export default (config = defaults) => __awaiter(void 0, void 0, void 0, function* () {
     // merge the user provided overrides with the defaults
     config = merge(defaults, config);
-    // 1. figure out which editor to use
-    // 2. if a filename was not provided, generate a random one
-    // 3. generate the temprory file
-    // 4. open the editor
-    // 5. capture input
-    // 6. delete the file
-    console.log(config);
+    // if a filename was not provided, generate a random one
+    // generate the temporary file
+    // figure out which editor to use
+    const editor = yield getEditor(config.editor);
+    // open the editor
+    // capture input
+    // delete the file
     return '';
 });
