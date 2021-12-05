@@ -40,5 +40,8 @@ export const getEditor = ({ editor }) => {
 export const openEditor = (config) => __awaiter(void 0, void 0, void 0, function* () {
     return yield execa(`${config.editor} "${getTempFilePath(config.name)}"`, {
         shell: true,
+        stdin: process.stdin,
+        stderr: process.stderr,
+        stdout: process.stdout,
     });
 });

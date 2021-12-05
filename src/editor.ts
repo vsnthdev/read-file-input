@@ -40,4 +40,7 @@ export const getEditor = ({ editor }: ConfigImpl): string => {
 export const openEditor = async (config: ConfigImpl) =>
     await execa(`${config.editor} "${getTempFilePath(config.name)}"`, {
         shell: true,
+        stdin: process.stdin,
+        stderr: process.stderr,
+        stdout: process.stdout,
     })
