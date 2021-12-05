@@ -4,7 +4,7 @@
     "version": "0.0.0",
     "license": "MIT",
     "main": "",
-    "type": "commonjs",
+    "type": "module",
     "homepage": "https://github.com/vsnthdev/read-file-input#readme",
     "bugs": "https://github.com/vsnthdev/read-file-input/issues",
     "author": {
@@ -16,7 +16,10 @@
         "type": "git",
         "url": "https://github.com/vsnthdev/read-file-input.git"
     },
-    "scripts": {},
+    "scripts": {
+        "dev": "tsc --watch",
+        "build": "rimraf ./dist && tsc"
+    },
     "keywords": [],
     "devDependencies": {
         "@types/node": "^16.11.11",
@@ -28,6 +31,7 @@
         "eslint-plugin-prettier": "^4.0.0",
         "eslint-plugin-simple-import-sort": "^7.0.0",
         "prettier": "^2.5.1",
+        "rimraf": "^3.0.2",
         "typescript": "^4.5.2"
     }
 }
