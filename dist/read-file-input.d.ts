@@ -1,10 +1,3 @@
-interface ConfigImpl {
-    editor?: string;
-    name?: string;
-    content?: {
-        file?: string;
-        data?: string;
-    };
-}
-declare const _default: (config: ConfigImpl) => Promise<string>;
+import { ConfigImpl } from './config';
+declare const _default: (config?: ConfigImpl) => Promise<string>;
 export default _default;

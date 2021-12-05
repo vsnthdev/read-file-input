@@ -11,6 +11,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-export default (config) => __awaiter(void 0, void 0, void 0, function* () {
+import merge from 'deepmerge';
+const defaults = {
+    cleanup: true,
+};
+export default (config = defaults) => __awaiter(void 0, void 0, void 0, function* () {
+    // merge the user provided overrides with the defaults
+    config = merge(defaults, config);
+    // 1. figure out which editor to use
+    // 2. if a filename was not provided, generate a random one
+    // 3. generate the temprory file
+    // 4. open the editor
+    // 5. capture input
+    // 6. delete the file
+    console.log(config);
     return '';
 });

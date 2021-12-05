@@ -21,6 +21,9 @@
         "build": "rimraf ./dist && tsc --incremental false"
     },
     "keywords": [],
+    "dependencies": {
+        "deepmerge": "^4.2.2"
+    },
     "devDependencies": {
         "@types/node": "^16.11.11",
         "@typescript-eslint/eslint-plugin": "^5.5.0",
