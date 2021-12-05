@@ -3,4 +3,15 @@
  *  Created On 05 December 2021
  */
 
-console.log('hello 👋')
+interface ConfigImpl {
+    editor?: string
+    name?: string
+    content?: {
+        file?: string
+        data?: string
+    }
+}
+
+export default async (config: ConfigImpl): Promise<string> => {
+    return ''
+}
