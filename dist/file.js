@@ -40,7 +40,7 @@ export const create = ({ name, content }) => __awaiter(void 0, void 0, void 0, f
     // we have created
     yield file.close();
 });
-// deletes the created file from the temp directory, if enabled in the config
-const cleanup = () => __awaiter(void 0, void 0, void 0, function* () { });
 // reads the temp file text and returns back the utf-8 string
-export const read = () => __awaiter(void 0, void 0, void 0, function* () { return ''; });
+export const read = (config) => __awaiter(void 0, void 0, void 0, function* () { return yield fs.readFile(getTempFilePath(config.name), 'utf-8'); });
+// deletes the created file from the temp directory, if enabled in the config
+export const cleanup = () => __awaiter(void 0, void 0, void 0, function* () { });

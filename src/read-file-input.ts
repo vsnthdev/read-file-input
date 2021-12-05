@@ -8,7 +8,7 @@ import { nanoid } from 'nanoid'
 
 import { ConfigImpl } from './config.js'
 import { getEditor, openEditor } from './editor.js'
-import { create } from './file.js'
+import { create, read } from './file.js'
 
 const defaults: ConfigImpl = {
     cleanup: true,
@@ -29,7 +29,9 @@ export default async (config: ConfigImpl = defaults): Promise<string> => {
     await openEditor(config)
 
     // capture input
+    const userInput = await read(config)
+
     // delete the file
 
-    return ''
+    return userInput
 }

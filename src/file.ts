@@ -42,8 +42,9 @@ export const create = async ({ name, content }: ConfigImpl): Promise<void> => {
     await file.close()
 }
 
-// deletes the created file from the temp directory, if enabled in the config
-const cleanup = async (): Promise<void> => {}
-
 // reads the temp file text and returns back the utf-8 string
-export const read = async (): Promise<string> => ''
+export const read = async (config: ConfigImpl): Promise<string> =>
+    await fs.readFile(getTempFilePath(config.name), 'utf-8')
+
+// deletes the created file from the temp directory, if enabled in the config
+export const cleanup = async (): Promise<void> => {}
