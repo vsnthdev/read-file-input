@@ -12,17 +12,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import merge from 'deepmerge';
+import { nanoid } from 'nanoid';
 import getEditor from './editor.js';
 const defaults = {
     cleanup: true,
+    name: `${nanoid(5)}.txt`,
 };
 export default (config = defaults) => __awaiter(void 0, void 0, void 0, function* () {
     // merge the user provided overrides with the defaults
     config = merge(defaults, config);
-    // if a filename was not provided, generate a random one
     // generate the temporary file
     // figure out which editor to use
-    const editor = yield getEditor(config.editor);
+    config.editor = yield getEditor(config.editor);
     // open the editor
     // capture input
     // delete the file
