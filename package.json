@@ -1,7 +1,7 @@
 {
     "name": "read-file-input",
     "description": "Opens a 📝 text editor, waits until closed & captures 🔬 file content.",
-    "version": "0.0.2",
+    "version": "1.0.0",
     "license": "MIT",
     "main": "",
     "type": "module",
