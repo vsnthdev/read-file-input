@@ -35,7 +35,7 @@ npm i read-file-input
 After `read-file-input` as a dependency using the above command, you can use it in the following way:
 
 ```javascript
-import readFi from '../dist/read-file-input.js'
+/read-file-input.js'
 
 const read = await readFi()
 
@@ -44,7 +44,7 @@ console.log(read)
 
 ```
 
-## 🪄 Configuration
+## 🧪 Configuration
 
 ```typescript
 export interface ConfigImpl {
@@ -59,9 +59,9 @@ export interface ConfigImpl {
 
 ```
 
-## 🧑‍💻 Building & Dev Setup
+## 💻 Building & Dev Setup
 
-### 🪄 Running Examples
+### ⚡ Running Examples
 ### 🛠️ Writing Code
 
 <!-- footer -->

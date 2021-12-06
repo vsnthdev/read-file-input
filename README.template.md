@@ -38,15 +38,15 @@ After `<!-- name -->` as a dependency using the above command, you can use it in
 <!-- example -->
 ```
 
-## 🪄 Configuration
+## 🧪 Configuration
 
 ```typescript
 <!-- config -->
 ```
 
-## 🧑‍💻 Building & Dev Setup
+## 💻 Building & Dev Setup
 
-### 🪄 Running Examples
+### ⚡ Running Examples
 ### 🛠️ Writing Code
 
 <!-- footer -->
