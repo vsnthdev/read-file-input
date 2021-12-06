@@ -35,7 +35,7 @@ npm i read-file-input
 After `read-file-input` as a dependency using the above command, you can use it in the following way:
 
 ```javascript
-import readFi from '../../dist/read-file-input.js'
+import readFi from '../dist/read-file-input.js'
 
 const read = await readFi()
 

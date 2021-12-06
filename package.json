@@ -19,7 +19,7 @@
     "scripts": {
         "dev": "tsc --watch",
         "build": "rimraf ./dist && tsc --incremental false",
-        "docs": "node scripts/docs/index.js"
+        "docs": "node scripts/docs.js"
     },
     "keywords": [
         "cli",
