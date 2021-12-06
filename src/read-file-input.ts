@@ -12,12 +12,17 @@ import { cleanup, create, read } from './file.js'
 
 const defaults: ConfigImpl = {
     cleanup: true,
-    name: `${nanoid(5)}.txt`,
+    name: '[id].txt',
 }
 
 export default async (config: ConfigImpl = defaults): Promise<string> => {
     // merge the user provided overrides with the defaults
     config = merge(defaults, config)
+
+    // apply a random string to the file name
+    // to prevent conflicting with exiting temp files
+    // or multiple CLIs using this library
+    config.name = config.name.replace('[id]', nanoid(5))
 
     // generate the temporary file
     await create(config)

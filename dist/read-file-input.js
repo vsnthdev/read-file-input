@@ -17,11 +17,15 @@ import { getEditor, openEditor } from './editor.js';
 import { cleanup, create, read } from './file.js';
 const defaults = {
     cleanup: true,
-    name: `${nanoid(5)}.txt`,
+    name: '[id].txt',
 };
 export default (config = defaults) => __awaiter(void 0, void 0, void 0, function* () {
     // merge the user provided overrides with the defaults
     config = merge(defaults, config);
+    // apply a random string to the file name
+    // to prevent conflicting with exiting temp files
+    // or multiple CLIs using this library
+    config.name = config.name.replace('[id]', nanoid(5));
     // generate the temporary file
     yield create(config);
     // figure out which editor to use
