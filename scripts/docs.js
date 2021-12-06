@@ -40,7 +40,8 @@ const content = template
     .replace(/<!-- description -->/g, app.description)
     .replace(/<!-- username -->/g, username)
     .replace(/<!-- config -->/g, config.substr(100))
-    .replace(/<!-- example -->/g, example.substr(113))
+    .replace(/<!-- example -->/g, example.substr(86))
+    .replaceAll(/<!-- year-->/g, new Date().getFullYear())
 
 // write the rendered file
 await fs.writeFile(dest, content, 'utf-8')

@@ -3,7 +3,7 @@ export interface ConfigImpl {
     editor?: string;
     cleanup?: boolean;
     content?: {
-        file?: string;
         data?: string;
+        file?: string;
     };
 }

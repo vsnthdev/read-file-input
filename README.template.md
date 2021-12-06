@@ -19,9 +19,19 @@
 </p>
 <br>
 
+Allows you to capture user input by opening a text editor instead of `stdin`. Manually passing large amounts of data through `stdin` is cumbersome and not widely supported as it depends on the terminal emulator.
+
+This module creates a temporary file and opens it with the configured text editor. When the user saves the file and quits the editor, we read back the file while optionally deleting it.
+
+Since most text editors support UTF-8, any emojis and special characters will be handled safely instead of replying on the terminal.
+
 > Tweet <a target="_blank" rel="noopener" href="https://vas.cx/twitter">@<!-- username --></a>, I would love to know your opinion & experience on this project 😍
 
 ## ✨ Features
+
+1. Cross platform
+2. Supports graphical & terminal editors
+3. Prefills the file with content
 
 ## 💿 Installation
 
