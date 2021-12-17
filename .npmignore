@@ -1,0 +1,9 @@
+src/
+docs/
+examples/
+scripts/
+prettier.config.cjs
+.eslintrc.cjs
+README.template.md
+tsconfig*
+.babelrc
