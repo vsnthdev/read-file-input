@@ -37,10 +37,17 @@ export const getEditor = ({ editor }: ConfigImpl): string => {
     return editor
 }
 
-export const openEditor = async (config: ConfigImpl) =>
-    await execa(`${config.editor} "${getTempFilePath(config.name)}"`, {
+export const openEditor = async (config: ConfigImpl) => {
+    const opened = execa(`${config.editor} "${getTempFilePath(config.name)}"`, {
         shell: true,
-        stdin: process.stdin,
-        stderr: process.stderr,
-        stdout: process.stdout,
+        stdin: config.noWait == false ? process.stdin : 'ignore',
+        stderr: config.noWait == false ? process.stderr : 'ignore',
+        stdout: config.noWait == false ? process.stdout : 'ignore',
     })
+
+    if (config.noWait == false) {
+        await opened
+    } else {
+        setTimeout(() => opened.unref(), 500)
+    }
+}

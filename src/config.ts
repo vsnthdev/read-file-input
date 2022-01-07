@@ -17,6 +17,11 @@ export interface ConfigImpl {
     // defaults to true and recommended to keep it that way
     cleanup?: boolean
 
+    // do not wait for the editor to be closed, just return
+    // as soon as the editor has opened, useful to just show
+    // some content rather than taking inputs
+    noWait?: boolean
+
     // the content that the temporary file should be pre-filled with
     // undefined by default
     content?: {

@@ -12,6 +12,7 @@ import { cleanup, create, read } from './file.js'
 
 const defaults: ConfigImpl = {
     cleanup: true,
+    noWait: false,
     name: '[id].txt',
 }
 
