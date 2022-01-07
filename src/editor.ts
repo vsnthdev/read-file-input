@@ -38,6 +38,7 @@ export const getEditor = ({ editor }: ConfigImpl): string => {
 }
 
 export const openEditor = async (config: ConfigImpl) => {
+    // spawn a new editor process
     const opened = execa(`${config.editor} "${getTempFilePath(config.name)}"`, {
         shell: true,
         stdin: config.noWait == false ? process.stdin : 'ignore',
@@ -45,9 +46,9 @@ export const openEditor = async (config: ConfigImpl) => {
         stdout: config.noWait == false ? process.stdout : 'ignore',
     })
 
-    if (config.noWait == false) {
-        await opened
-    } else {
-        setTimeout(() => opened.unref(), 500)
-    }
+    // schedule a undef() if noWait is set to true
+    if (config.noWait == true) setTimeout(() => opened.unref(), 500)
+
+    // now let's wait until the editor has been opened
+    await opened
 }
