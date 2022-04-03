@@ -17,6 +17,9 @@
         "type": "git",
         "url": "https://github.com/vsnthdev/read-file-input.git"
     },
+    "engines": {
+        "node": ">=17"
+    },
     "scripts": {
         "dev": "tsc --watch",
         "build": "rimraf ./dist && tsc --incremental false",
