@@ -20,6 +20,7 @@
     "scripts": {
         "dev": "tsc --watch",
         "build": "rimraf ./dist && tsc --incremental false",
+        "clean": "rimraf ./dist",
         "docs": "node scripts/docs.js"
     },
     "keywords": [
