@@ -39,9 +39,10 @@ const content = template
     .replace(/<!-- name -->/g, app.name)
     .replace(/<!-- description -->/g, app.description)
     .replace(/<!-- username -->/g, username)
-    .replace(/<!-- config -->/g, config.substr(100))
-    .replace(/<!-- example -->/g, example.substr(86))
+    .replace(/<!-- config -->/g, config.slice(100))
+    .replace(/<!-- example -->/g, example.slice(86))
     .replaceAll(/<!-- year-->/g, new Date().getFullYear())
+    .replaceAll(/<!-- nodeVersion -->/g, app.engines.node.slice(2))
 
 // write the rendered file
 await fs.writeFile(dest, content, 'utf-8')

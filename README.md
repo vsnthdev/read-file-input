@@ -97,8 +97,27 @@ export interface ConfigImpl {
 
 ## 💻 Building & Dev Setup
 
+You need to be at least on **Node.js v17 or above** and follow the below instructions to build the project 👇
+
+- **STEP 1️⃣**  Clone this project
+- **STEP 2️⃣**  Run **`npm install`** to get all dependencies
+- **STEP 3️⃣**  To build the TypeScript project run **`npm run build`**
+
+Now you should have a `dist` folder in the project directory.
+
 ### ⚡ Running Examples
+
+Once you have successfully built the project, to run a basic example 👇
+
+```
+node examples/basic.js
+```
+
+Checkout [other examples](https://github.com/vsnthdev/read-file-input/tree/main/examples) to know more on different use cases and configuration of options of **read-file-input**.
+
 ### 🛠️ Writing Code
+
+This project follows [Vasanth's Commit Style](https://vas.cx/commits) for commit messages.
 
 <!-- footer -->
 
