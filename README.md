@@ -122,7 +122,7 @@ This project follows [Vasanth's Commit Style](https://vas.cx/commits) for commit
 <!-- footer -->
 
 ## 📰 License
-> The **read-file-input** project is released under the [MIT license](https://github.com/vsnthdev/read-file-input/blob/main/LICENSE.md). <br> Developed &amp; maintained By Vasanth Srivatsa. Copyright 2022 © Vasanth Developer.
+> The **read-file-input** project is released under the [MIT license](https://github.com/vsnthdev/read-file-input/blob/main/LICENSE.md). <br> Developed &amp; maintained By Vasanth Srivatsa. Copyright 2023 © Vasanth Developer.
 <hr>
 
 > <a href="https://vsnth.dev" target="_blank" rel="noopener">vsnth.dev</a> &nbsp;&middot;&nbsp;
