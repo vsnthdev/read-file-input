@@ -4,7 +4,6 @@
         "newLine": "LF",
         "rootDir": "src/",
         "outDir": "dist/",
-        "charset": "UTF-8",
         "module": "ESNext",
         "target": "ES2015",
         "declaration": true,
